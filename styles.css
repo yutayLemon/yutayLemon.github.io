@@ -1,0 +1,227 @@
+:root {
+    --bg-color: #FFFDF0;
+    --card-bg: #FFFFFF;
+    --text-main: #1C1A17;
+    --text-muted: #5C5850;
+    --primary-yellow: #FCD34D;
+    --accent-yellow-dark: #D97706;
+    --border-color: #E5E1D8;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header Section */
+.intro-section {
+    background-color: var(--primary-yellow);
+    padding: 4rem 0;
+    border-bottom: 3px solid var(--text-main);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--text-main);
+    background-color: var(--card-bg);
+}
+
+.profile-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.profile-text p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+/* Dynamic Grids */
+.project-group-section {
+    margin-top: 3.5rem;
+}
+
+.project-group-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.project-group-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-yellow);
+    z-index: -1;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--card-bg);
+    border: 2px solid var(--text-main);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 0px var(--text-main);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--text-main);
+}
+
+.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--text-main);
+    background-color: var(--bg-color);
+}
+
+.project-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-main);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.project-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid var(--text-main);
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-yellow);
+    color: var(--text-main);
+}
+
+.primary-btn:hover {
+    background-color: #f5c425;
+}
+
+.secondary-btn {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}
+
+.secondary-btn:hover {
+    background-color: var(--bg-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.text-btn {
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 0.8rem;
+}
+
+.text-btn:hover {
+    background-color: var(--bg-color);
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* NPM Specific Brand Button */
+.npm-btn {
+    background-color: #CB3837; /* NPM Red */
+    color: #FFFFFF;
+    border-color: var(--text-main);
+}
+
+.npm-btn:hover {
+    background-color: #A22C2B;
+    color: #FFFFFF;
+}

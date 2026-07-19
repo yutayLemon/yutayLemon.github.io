@@ -1,0 +1,138 @@
+{
+  "profile": {
+    "name": "Yuta Yamashita",
+    "bio": "Currently I'm a student at the university of Melbourne studying physics with a passion for programing and building technical projects.",
+    "profilePic": "imgs/lemon.png",
+    "socials": {
+      "github": "https://github.com/yutayLemon",
+      "linkedin": "#",
+      "resume": "#"
+    }
+  },
+  "projects": {
+    "published": [
+      {
+        "title": "STLFileToolsNodejs",
+        "description": "Tools used to generate stl files using user defined functions.",
+        "githubLink": "https://github.com/yutayLemon/STLFileToolsNodejs",
+        "npmLink": "https://www.npmjs.com/package/stlfiletools",
+        "demoLink": "",
+        "technologies": [
+          "Javascript",
+          "npm",
+          "NodeJs"
+        ],
+        "image": "https://github.com/yutayLemon/STLFileToolsNodejs/raw/main/documentation/SimpleDemo.png?raw=true"
+      },
+      {
+        "title": "desmosLogger",
+        "description": "Npm tool to generate interactive desmos applications for 3d software debuging.",
+        "githubLink": "https://github.com/yutayLemon/desmosLogger",
+        "npmLink": "https://www.npmjs.com/package/desmoslogger",
+        "demoLink": "",
+        "technologies": [
+          "npm",
+          "Javascript",
+          "desmos"
+        ],
+        "image": "imgs/desmos.png"
+      },
+      {
+        "title": "Ti-Nspire UnitCircle",
+        "description": "Visual representation of unit circle with sin,cos and tan.With respective graphs. For Ti-Nspire Graphing calculator.",
+        "githubLink": "https://github.com/yutayLemon/Ti-Nspire-UnitCircle",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [
+          "Lua"
+        ],
+        "image": "imgs/unitCirc.png"
+      },
+      {
+        "title": "Ti-Nspier Othello",
+        "description": "Othello-clone on Ti-Nspire with computer opponent.",
+        "githubLink": "https://github.com/yutayLemon/Ti-Nspier-Othello",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [
+          "Lua",
+          "Ti-Nspier"
+        ],
+        "image": "imgs/othello.png"
+      },
+      {
+        "title": "CAS_Spcei-math",
+        "description": "Code snippets useful for VCE specialist maths exams for Ti-Nspire graphing calculator.",
+        "githubLink": "https://github.com/yutayLemon/CAS_Spcei-math",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [
+          "Lua",
+          "Ti-Nspire"
+        ],
+        "image": "imgs/cas.png"
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "EduSocial",
+        "description": "Uses LLM's to generate educational short form videos on a given topic.",
+        "githubLink": "https://github.com/yutayLemon/EduSocial",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [
+          "Python",
+          "Javascript",
+          "AI",
+          "NodeJs"
+        ],
+        "image": ""
+      },
+      {
+        "title": "STCP- Secure Toilet Communication Protocol",
+        "description": "Decode and encode messages as short and long toilet flushes using self trained AI.",
+        "githubLink": "https://github.com/qwertyx6524/flushtranslator",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [],
+        "image": ""
+      },
+      {
+        "title": "Star",
+        "description": "",
+        "githubLink": "",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [],
+        "image": ""
+      }
+    ],
+    "poc": [
+      {
+        "title": "ImgCollage",
+        "description": "Algorithm used to generate a collage of a image from circular profile pictures provided.",
+        "githubLink": "https://github.com/yutayLemon/ImgCollage",
+        "npmLink": "",
+        "demoLink": "",
+        "technologies": [
+          "Javascript"
+        ],
+        "image": "imgs/highresquadv2.png"
+      },
+      {
+        "title": "Card Simulator - Physics engine attempt",
+        "description": "Physics engine from the ground up using ThreeJS.",
+        "githubLink": "https://github.com/yutayLemon/cardSim",
+        "npmLink": "",
+        "demoLink": "https://yutaylemon.github.io/cardSim/",
+        "technologies": [
+          "ThreeJs",
+          "Vite",
+          "Javascript",
+          "ThreeJs"
+        ],
+        "image": "imgs/cardSim.png"
+      }
+    ]
+  }
+}

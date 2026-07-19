@@ -1,11 +1,108 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<img src="lemon.png" class="lemonImg">
-<p class="hi">Hi</p>
-<p>git:<a href="https://github.com/yutayLemon">yutayLemon</a></p>
-<p>npm:<a href="https://www.npmjs.com/~yutay.lemon">yutay.lemon</a></p>
-<script src="index.js"></script>
+
+    <!-- Intro / Profile Section -->
+    <header class="intro-section">
+        <div class="container header-container">
+            <img id="profile-pic" src="" alt="Profile Picture" class="profile-pic" style="display:none;">
+            <div class="profile-text">
+                <h1 id="profile-name">Loading...</h1>
+                <p id="profile-bio"></p>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Published Section -->
+        <section class="project-group-section" id="group-published">
+            <h2>Published & Polished</h2>
+            <div class="project-grid" id="grid-published"></div>
+        </section>
+
+        <!-- Hackathons Section -->
+        <section class="project-group-section" id="group-hackathons">
+            <h2>Hackathon Projects</h2>
+            <div class="project-grid" id="grid-hackathons"></div>
+        </section>
+
+        <!-- Proof of Concept Section -->
+        <section class="project-group-section" id="group-poc">
+            <h2>Proofs of Concept / Demos</h2>
+            <div class="project-grid" id="grid-poc"></div>
+        </section>
+    </main>
+
+    <script>
+        fetch('./projects.json')
+            .then(res => res.json())
+            .then(data => {
+                // Populate Profile
+                document.title = `${data.profile.name} | Portfolio`;
+                document.getElementById('profile-name').innerText = data.profile.name;
+                document.getElementById('profile-bio').innerText = data.profile.bio;
+                
+                if(data.profile.profilePic) {
+                    const pic = document.getElementById('profile-pic');
+                    pic.src = data.profile.profilePic;
+                    pic.style.display = 'block';
+                }
+
+                // Populate Socials
+                const socialsContainer = document.getElementById('social-links');
+                Object.entries(data.profile.socials).forEach(([platform, url]) => {
+                    if (url && url !== '#') {
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.className = 'btn text-btn';
+                        link.target = '_blank';
+                        link.innerText = platform.toUpperCase();
+                        socialsContainer.appendChild(link);
+                    }
+                });
+const renderGrid = (gridId, projectList) => {
+    const grid = document.getElementById(gridId);
+    if(!projectList || projectList.length === 0) {
+        grid.parentElement.style.display = 'none';
+        return;
+    }
+    
+    projectList.forEach(proj => {
+        const techBadges = proj.technologies.map(t => `<span class="badge">${t}</span>`).join('');
+        
+        // 1. Generate conditional buttons based on existence of links
+        const demoBtn = proj.demoLink ? `<a href="${proj.demoLink}" target="_blank" class="btn primary-btn">Live Demo</a>` : '';
+        const npmBtn = proj.npmLink ? `<a href="${proj.npmLink}" target="_blank" class="btn npm-btn">NPM</a>` : '';
+        
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+            <img src="${proj.image || 'https://placeholder.pics/svg/500x300'}" alt="${proj.title}" class="project-img">
+            <div class="project-info">
+                <h3>${proj.title}</h3>
+                <p>${proj.description}</p>
+                <div class="tech-stack">${techBadges}</div>
+                <div class="project-actions">
+                    <a href="${proj.githubLink}" target="_blank" class="btn secondary-btn">GitHub</a>
+                    ${npmBtn}  ${demoBtn}
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+};
+                renderGrid('grid-published', data.projects.published);
+                renderGrid('grid-hackathons', data.projects.hackathons);
+                renderGrid('grid-poc', data.projects.poc);
+            })
+            .catch(err => console.error("Error loading projects data:", err));
+    </script>
 </body>
+</html>
