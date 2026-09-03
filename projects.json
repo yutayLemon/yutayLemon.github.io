@@ -75,36 +75,46 @@
     ],
     "hackathons": [
       {
-        "title": "EduSocial",
+        "title": "EduMeels",
         "description": "Uses LLM's to generate educational short form videos on a given topic.",
         "githubLink": "https://github.com/yutayLemon/EduSocial",
         "npmLink": "",
-        "demoLink": "",
+        "demoLink": "https://edusocial-cemg.onrender.com/",
         "technologies": [
           "Python",
           "Javascript",
           "AI",
           "NodeJs"
         ],
-        "image": ""
+        "image": "imgs/meels.png"
       },
       {
         "title": "STCP- Secure Toilet Communication Protocol",
         "description": "Decode and encode messages as short and long toilet flushes using self trained AI.",
         "githubLink": "https://github.com/qwertyx6524/flushtranslator",
         "npmLink": "",
-        "demoLink": "",
-        "technologies": [],
-        "image": ""
+        "demoLink": "https://site--flushtranslator--2lgb9zzbflrg.code.run/secret/index.html?se=Vodca",
+        "technologies": [
+          "Javascript",
+          "NodeJs",
+          "Esp32",
+          "Python"
+        ],
+        "image": "imgs/flush.png"
       },
       {
-        "title": "Star",
-        "description": "",
-        "githubLink": "",
+        "title": "OurStarsSky",
+        "description": "A social media app to share and preserve our stories about the stars and constellations in the skies above.",
+        "githubLink": "https://github.com/SamHarbi/SkySocial",
         "npmLink": "",
-        "demoLink": "",
-        "technologies": [],
-        "image": ""
+        "demoLink": "https://skysocial-6qm2o.ondigitalocean.app/",
+        "technologies": [
+          "NextJs",
+          "React",
+          "SupaBase",
+          "TypeScript"
+        ],
+        "image": "imgs/star.png"
       }
     ],
     "poc": [
